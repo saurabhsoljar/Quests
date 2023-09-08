@@ -1,0 +1,85 @@
+Execution context is an essential concept in JavaScript that defines the environment in which code is executed. It contains information about variables, functions, objects, and the scope chain. Each time a function is called or code is executed, a new execution context is created.
+
+There are three types of execution contexts in JavaScript:
+
+1. Global Execution Context:
+   - The default and outermost execution context.
+   - Created when the JavaScript engine starts running.
+   - Represents the global scope.
+   - Contains global variables and functions.
+   - Example: Global variables and functions declared outside any function.
+
+2. Function Execution Context:
+   - Created whenever a function is invoked.
+   - Represents the scope of that specific function call.
+   - Contains local variables, function arguments, and references to the outer scope.
+   - Example: Local variables and arguments of a function.
+
+3. Eval Execution Context:
+   - Created when code is executed inside the `eval()` function.
+   - Represents the scope of the evaluated code.
+   - Not commonly used in regular JavaScript programming.
+
+The execution context consists of three components:
+
+1. Variable Environment:
+   - Contains the variables declared within the current context.
+   - Includes function arguments, local variables, and function declarations.
+   - Variables are stored as key-value pairs.
+   - Allows for variable creation, initialization, and reference.
+
+2. Scope Chain:
+   - Represents the hierarchical structure of nested functions.
+   - Determines the order in which variables are accessed and resolved.
+   - Built during the creation phase of the execution context.
+   - Allows access to variables in the current and outer scopes.
+
+3. This Value:
+   - Refers to the context in which a function is called.
+   - Determines the value of the `this` keyword within the function.
+   - Differs based on how the function is called.
+
+Here's a simplified diagram illustrating the relationship between the execution contexts:
+
+```
+            Global Execution Context
+   _____________________________________
+  |                                     |
+  |  Variable Environment                |
+  |  Scope Chain                         |
+  |  This Value                          |
+  |  ...                                 |
+  |                                     |
+  |  Function Execution Context          |
+  |  ___________________________________|
+  | |                                   |
+  | |  Variable Environment              |
+  | |  Scope Chain                       |
+  | |  This Value                        |
+  | |  ...                              |
+  | |                                   |
+  | |  Function Execution Context        |
+  | |  _________________________________|
+  | | |                                 |
+  | | |  Variable Environment            |
+  | | |  Scope Chain                     |
+  | | |  This Value                      |
+  | | |  ...                             |
+  | | |                                 |
+  | | |  ...                             |
+  | | |                                 |
+  | | |_________________________________|
+  | |                                   |
+  | |  ...                              |
+  | |                                   |
+  | |___________________________________|
+  |                                     |
+  |  ...                                |
+  |_____________________________________|
+```
+
+In the diagram, each function execution context is nested within its calling context. This nesting allows for variable scoping and access across different contexts. The global execution context sits at the top and serves as the root of the execution context hierarchy.
+
+As JavaScript code is executed, the execution contexts are created and destroyed, forming a stack known as the "call stack." The topmost execution context in the stack is always the currently executing context.
+
+By understanding execution contexts, you can grasp how variables and functions are organized, how scoping works, and how the flow of code affects the context stack.

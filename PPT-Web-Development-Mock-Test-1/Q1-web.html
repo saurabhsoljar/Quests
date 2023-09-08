@@ -1,0 +1,67 @@
+1. Explain all the CSS positions(static, fixed, sticky, relative, absolute) with one code example each
+
+<!-- Static Position: -->
+
+The default position value for elements.
+Elements with static positioning are positioned according to the normal flow of the document.
+They are not affected by the top, bottom, left, right, or z-index properties.
+
+Code example:
+
+.static-position {
+    position: static;
+  }
+  
+  <!-- Fixed Position -->
+  Elements with fixed positioning are positioned relative to the viewport.
+They do not scroll with the page and remain fixed at the specified position.
+
+Code example:
+.fixed-position {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+  }
+
+  
+  <!-- Sticky Position: -->
+
+  Elements with sticky positioning are positioned based on the user's scroll position.
+They behave like relative positioning until a specified scroll threshold is reached.
+At that point, they "stick" to the specified position and remain fixed.
+
+
+Code example:
+
+.sticky-position {
+    position: sticky;
+    top: 50px;
+  }
+  
+  <!-- Relative Position: -->
+
+  Elements with relative positioning are positioned relative to their normal position in the document flow.
+The top, bottom, left, and right properties can be used to adjust their position.
+
+Code example:
+
+.relative-position {
+    position: relative;
+    top: 10px;
+    left: 20px;
+  }
+  
+
+  <!-- Absolute Position: -->
+
+  Elements with absolute positioning are positioned relative to their nearest positioned ancestor or the initial containing block if no ancestor has a positioned property.
+They are taken out of the normal document flow and do not leave a gap in the layout.
+
+Code example:
+
+.absolute-position {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
